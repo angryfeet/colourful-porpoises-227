@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
+- Ruby 3.0+ 
+- Rails 7.0.4
 
-Things you may want to cover:
+## How to run
+In a terminal, navigate to the root folder and run `./bin/dev`
+The application should then be available to view at `http://localhost:3000`
 
-* Ruby version
+## How to run tests
+In a terminal, navigate to the root folder and run `rspec`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
