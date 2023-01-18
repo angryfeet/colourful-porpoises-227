@@ -1,0 +1,10 @@
+<h1 class="text-center font-bold text-4xl mb-6">Poker Hand Checker</h1>
+<div class="text-center">
+  <%= turbo_frame_tag "hand_results" do %>
+    <%= form_with url: check_hand_path, method: 'post' do |f| %>
+      <%= f.text_field :card_input %>
+      <%= f.submit "Check hand", class: 'bg-blue-600 py-2 px-3 text-white border-blue-900 border-solid border' %>
+    <% end %>
+
+  <% end %>
+</div>
