@@ -30,6 +30,19 @@ class PokerHand
     @card_input ||= []
   end
 
+  def check_hand
+    return 'Straight flush' if straight_flush?
+    return 'Four of a kind' if four_of_a_kind?
+    return 'Full house' if full_house?
+    return 'Flush' if flush?
+    return 'Straight' if straight?
+    return 'Three of a kind' if three_of_a_kind?
+    return 'Two pair' if two_pair?
+    return 'One pair' if one_pair?
+
+    'High card'
+  end
+
   def straight_flush?
     flush? && straight?
   end
