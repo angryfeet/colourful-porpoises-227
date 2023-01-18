@@ -30,6 +30,29 @@ class PokerHand
     @card_input ||= []
   end
 
+  def straight_flush?
+  end
+
+  def four_of_a_kind?
+  end
+
+  def full_house?
+  end
+
+  def flush?
+  end
+
+  def straight?
+  end
+
+  def three_of_a_kind?
+  end
+
+  def two_pair?
+  end
+
+  def one_pair?
+  end
   def cards
     @card_input&.split(' ')
   end
