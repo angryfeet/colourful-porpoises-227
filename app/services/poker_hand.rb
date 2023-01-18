@@ -1,5 +1,4 @@
 class PokerHand
-
   include ActiveModel::Model
 
   attr_accessor :card_input
@@ -8,16 +7,16 @@ class PokerHand
 
   validate :valid_hand_size
   def valid_hand_size
-    errors.add(:base, "is more than five cards") if cards.length > 5
-    errors.add(:base, "is less than five cards") if cards.length < 5
+    errors.add(:base, 'is more than five cards') if cards.length > 5
+    errors.add(:base, 'is less than five cards') if cards.length < 5
   end
 
   validate :valid_cards
   def valid_cards
-    invalid_suits = suits.select { |s| !["H", "D", "S", "C"].include?(s) }
-    errors.add(:base, "contains unknown suits") if invalid_suits.present?
-    invalid_faces = faces.select { |f| !(["A", "J", "Q", "K"] + (2..10).to_a).include?(f) }
-    errors.add(:base, "contains unknown faces") if invalid_faces.present?
+    invalid_suits = suits.reject { |s| %w[H D C S].include?(s) }
+    errors.add(:base, 'contains unknown suits') if invalid_suits.present?
+    invalid_faces = faces.reject { |f| (%w[A J Q K] + (2..10).to_a.map(&:to_s)).include?(f) }
+    errors.add(:base, 'contains unknown faces') if invalid_faces.present?
   end
 
   validate :duplicate_cards
